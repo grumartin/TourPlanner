@@ -1,0 +1,170 @@
+openapi: 3.0.3
+info:
+  title: Tourplanner
+  description: |-
+    This is the specification of the required API endpoints for the Tourplanner server.
+  version: 1.0.0
+servers:
+  - url: http://localhost:10001
+tags:
+  - name: tour
+    description: Tour creation and modification(CRUD)
+  - name: tourlogs
+    description: Tour Log creation and modification(CRUD)
+paths:
+  /tour:
+    post:
+      tags:
+        - tour
+      summary: Create a new tour
+      description: Create tour with all information
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/schemas/Tour'
+        required: true
+      responses:
+        '201':
+          description: Tour successfully created
+        '409':
+          description: Tour with same name already created
+  /tour/{name}:
+    put:
+      tags:
+        - tour
+      summary: Updates the tour data for the given name.
+      description: Retrieves the data for the tourname provided in the route.
+      parameters:
+        - in: path
+          name: name
+          required: true
+          schema:
+            type: string
+            example: Bergtour
+          description: The name from a tour.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/schemas/Tour'
+        required: true
+      responses:
+        '200':
+          description: Tour sucessfully updated.
+        '404':
+          description: Tour not found.
+    delete:
+      tags:
+        - tour
+      summary: Deletes an existing tour.
+      description: Deletes an existing tour.
+      parameters:
+        - in: path
+          name: name
+          required: true
+          schema:
+            type: string
+            example: Bergtour
+          description: The name of the tour to delete.
+      responses:
+        '200':
+          description: Tour successfully deleted
+        '404':
+          description: The provided tour was not found.
+  /tourlog:
+    post:
+      tags:
+        - tourlogs
+      summary: Create a new tour log
+      description: Create tour log with all information
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/schemas/Tourlog'
+        required: true
+      responses:
+        '201':
+          description: Tour log successfully created
+  /tourlog/{id}:
+    put:
+      tags:
+        - tourlogs
+      summary: Updates the tourlog data for the given id.
+      description: Retrieves the data for the id provided in the route.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 12
+          description: The id from a tourlog.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/schemas/Tourlog'
+        required: true
+      responses:
+        '200':
+          description: Tourlog sucessfully updated.
+        '404':
+          description: Tourlog not found.
+    delete:
+      tags:
+        - tourlogs
+      summary: Deletes an existing tourlog.
+      description: Deletes an existing tourlog.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 12
+          description: The id of the tourlog to delete.
+      responses:
+        '200':
+          description: Tourlog successfully deleted
+        '404':
+          description: The provided tourlog was not found.
+    
+  
+components:
+  schemas:
+    Tour:
+      type: object
+      properties:
+        Name:
+          type: string
+          example: Bergtour
+        Description:
+          type: string
+          example: Wanderung
+        From: 
+          type: string
+          example: Saalbach
+        To: 
+          type: string 
+          example: Leogang
+    Tourlog:
+      type: object
+      properties:
+        Date:
+          type: object
+          example: 2023-03-27T12:31:57+00:00
+        Comment:
+          type: string
+          example: Gute Tour
+        Difficulty: 
+          type: integer
+          example: 2
+        Total Time: 
+          type: object 
+          example: 03:50
+        Rating: 
+          type: integer
+          example: 1
+    
