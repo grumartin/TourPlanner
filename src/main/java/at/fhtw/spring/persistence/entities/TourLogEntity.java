@@ -1,14 +1,16 @@
 package at.fhtw.spring.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.time.LocalTime;
+
 
 @Data
 @Builder
@@ -21,11 +23,15 @@ public class TourLogEntity {
     @Column(name = "l_id")
     private Long id;
     @Column(name = "creation_time")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date creationTime;
+    @NotNull(message = "creationTime must be set.")
+    private Timestamp creationTime;
     private String comment;
-    private int difficulty;
+    private Integer difficulty;
     @Column(name = "total_time")
-    private LocalTime totalTime;
-    private int rating;
+    private Integer totalTime;      //seconds
+    private Integer rating;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "tour_id", nullable = false)
+    private TourEntity tour;
 }
