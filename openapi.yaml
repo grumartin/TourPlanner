@@ -29,31 +29,29 @@ paths:
           description: Tour successfully created
         '409':
           description: Tour with same name already created
-    
+  /tours:
     get:
       tags:
         - tour
-      summary: Get all existing tours
-      description: Get all tours as a list
+      summary: Get all tours
+      description: Get all tours from database
       responses:
         '200':
-          description: Tour successfully retrieved
-        '204':
-          description: No tours found
-  /tour/{name}:
+          description: Array with all tours
+  /tour/{id}:
     put:
       tags:
         - tour
       summary: Updates the tour data for the given name.
-      description: Retrieves the data for the tourname provided in the route.
+      description: Retrieves the data for the tour provided in the route.
       parameters:
         - in: path
-          name: name
+          name: id
           required: true
           schema:
-            type: string
-            example: Bergtour
-          description: The name from a tour.
+            type: integer
+            example: 12
+          description: The id from a tour.
       requestBody:
         content:
           application/json:
@@ -72,23 +70,31 @@ paths:
       description: Deletes an existing tour.
       parameters:
         - in: path
-          name: name
+          name: id
           required: true
           schema:
-            type: string
-            example: Bergtour
-          description: The name of the tour to delete.
+            type: integer
+            example: 12
+          description: The id of the tour to delete.
       responses:
         '200':
           description: Tour successfully deleted
         '404':
           description: The provided tour was not found.
-  /tourlog:
+  /tour/{id}/tourlog:
     post:
       tags:
         - tourlogs
-      summary: Create a new tour log
+      summary: Create a new tour log mapped to a tour
       description: Create tour log with all information
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 12
+          description: The id from a tour to which the tourlog should belong.
       requestBody:
         content:
           application/json:
@@ -98,12 +104,23 @@ paths:
       responses:
         '201':
           description: Tour log successfully created
+        '404':
+          description: The provided tourid was not found.
+  /tourlogs:
+    get:
+      tags:
+        - tourlogs
+      summary: Get all tourlogs
+      description: Get all tourlogs from database
+      responses:
+        '200':
+          description: Array with all tourlogs
   /tourlog/{id}:
     put:
       tags:
         - tourlogs
       summary: Updates the tourlog data for the given id.
-      description: Retrieves the data for the id provided in the route.
+      description: Updates the tourlog data for the given id.
       parameters:
         - in: path
           name: id
@@ -141,41 +158,59 @@ paths:
           description: Tourlog successfully deleted
         '404':
           description: The provided tourlog was not found.
-    
-  
+
+
 components:
   schemas:
     Tour:
       type: object
       properties:
-        Name:
+        id:
+          type: integer
+          example: 12
+        name:
           type: string
           example: Bergtour
-        Description:
+        description:
           type: string
           example: Wanderung
-        From: 
+        from:
           type: string
           example: Saalbach
-        To: 
-          type: string 
+        to:
+          type: string
           example: Leogang
+        type:
+          type: string
+          example: Wanderung
+        distance:
+          type: number
+          example: 12,5
+        time:
+          type: integer
+          example: 12321
+        imgPath:
+          type: string
+          example: ./sfsdf/dsfd/dsf.img
     Tourlog:
       type: object
       properties:
-        Date:
+        id:
+          type: integer
+          example: 12
+        creationTime:
           type: object
           example: 2023-03-27T12:31:57+00:00
-        Comment:
+        comment:
           type: string
           example: Gute Tour
-        Difficulty: 
+        difficulty:
           type: integer
           example: 2
-        Total Time: 
-          type: object 
-          example: 03:50
-        Rating: 
+        totalTime:
+          type: integer
+          example: 12321
+        rating:
           type: integer
           example: 1
     
