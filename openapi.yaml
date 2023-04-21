@@ -29,6 +29,17 @@ paths:
           description: Tour successfully created
         '409':
           description: Tour with same name already created
+    
+    get:
+      tags:
+        - tour
+      summary: Get all existing tours
+      description: Get all tours as a list
+      responses:
+        '200':
+          description: Tour successfully retrieved
+        '204':
+          description: No tours found
   /tour/{name}:
     put:
       tags:
