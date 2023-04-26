@@ -11,6 +11,8 @@ tags:
     description: Tour creation and modification(CRUD)
   - name: tourlogs
     description: Tour Log creation and modification(CRUD)
+  - name: map
+    description: Maquest API
 paths:
   /tour:
     post:
@@ -168,6 +170,51 @@ paths:
           description: Tourlog successfully deleted
         '404':
           description: The provided tourlog was not found.
+  /map:
+    get:
+      tags:
+        - map
+      summary: Fetch Map from Mapquest
+      description: Image fetched from API
+      parameters:
+        - in: query
+          name: start
+          schema:
+            type: string
+          description: The starting location of a Route Request.
+        - in: query
+          name: end
+          schema:
+            type: string
+          description: The ending location of a Route Request.
+      responses:
+        '200':
+          description: Image(JPEG)
+  /distance:
+    get:
+      tags:
+        - map
+      summary: Fetch Distance from Mapquest
+      description: Distance and Time fetched from API
+      parameters:
+        - in: query
+          name: from
+          schema:
+            type: string
+          description: The starting location of a Route Request.
+        - in: query
+          name: to
+          schema:
+            type: string
+          description: The ending location of a Route Request.
+        - in: query
+          name: routeType
+          schema:
+            type: string
+          description: Specifies the type of route wanted. Acceptable values are fastest, shortest, pedestrian, bicycle
+      responses:
+        '200':
+          description: Distance[miles] and Time[sec]
 
 
 components:
@@ -223,4 +270,7 @@ components:
         rating:
           type: integer
           example: 1
+
+
+
     
