@@ -43,4 +43,17 @@ public class ExceptionHandlerCustom {
 
         return new ResponseEntity<>(validationException, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(value =  {InternalServerException.class})
+    public ResponseEntity<Object> handleInternalServerException(InternalServerException e){
+        //create payload containing details
+        InternalException internalException = InternalException
+                .builder()
+                .msg(e.getMessage())
+                .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+                .timeStamp(ZonedDateTime.now(ZoneId.of("Z")))
+                .build();
+        //return response entity
+        return new ResponseEntity<>(internalException, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }

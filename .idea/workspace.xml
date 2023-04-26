@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="Updated openapi.yaml File">
+    <list default="true" id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="Updated README File">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openapi.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/exception/ExceptionHandlerCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/exception/ExceptionHandlerCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourLogEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourLogEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -64,7 +69,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/martin/Workspaces/swen2-template&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/martin/Workspaces/MTCG&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;2a2d595e6ed9a0b24f027f2b63b134d6&quot;
   },
@@ -170,6 +175,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="SwaggerCodegen">
+      <option name="activeConfigurationType" value="FILE" />
+      <option name="configurationPath" value="" />
+      <option name="customJreEnabled" value="false" />
+      <option name="customTemplatesPath" value="" />
+      <option name="enableDebugLogging" value="false" />
+      <option name="generateToPath" value="C:\Users\martin\Workspaces\TourPlanner\gen" />
+      <option name="generationParameters">
+        <list />
+      </option>
+      <option name="generatorPath" value="https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar" />
+      <option name="jdkPath" value="" />
+      <option name="language" value="java" />
+      <option name="specificationPath" value="C:\Users\martin\Workspaces\TourPlanner\openapi.yaml" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TourLogControllerTest" />
@@ -197,7 +218,10 @@
       <workItem from="1681554767543" duration="7846000" />
       <workItem from="1681571019531" duration="7781000" />
       <workItem from="1681662752785" duration="4747000" />
-      <workItem from="1682012628154" duration="987000" />
+      <workItem from="1682012628154" duration="1149000" />
+      <workItem from="1682322434942" duration="2043000" />
+      <workItem from="1682435749567" duration="6008000" />
+      <workItem from="1682503589122" duration="2963000" />
     </task>
     <task id="LOCAL-00001" summary="Entity Creation">
       <created>1680011857377</created>
@@ -227,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682011543743</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated README File">
+      <created>1682013631122</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682013631122</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +279,8 @@
     <MESSAGE value="Entity Creation" />
     <MESSAGE value="Repositories" />
     <MESSAGE value="Updated openapi.yaml File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated openapi.yaml File" />
+    <MESSAGE value="Updated README File" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README File" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TourPlanner$TourLogControllerTest.ic" NAME="TourLogControllerTest Coverage Results" MODIFIED="1681572707073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
