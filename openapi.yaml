@@ -118,15 +118,23 @@ paths:
           description: Tour log successfully created
         '404':
           description: The provided tourid was not found.
-  /tourlogs:
+  /tourlogs/{id}:
     get:
       tags:
         - tourlogs
       summary: Get all tourlogs
-      description: Get all tourlogs from database
+      description: Get all tourlogs from a tour
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 12
+          description: The id from a tour to which the tourlogs belong
       responses:
         '200':
-          description: Array with all tourlogs
+          description: Array with all tourlogs from tour
   /tourlog/{id}:
     put:
       tags:

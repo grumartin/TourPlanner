@@ -98,6 +98,15 @@ class TourServiceImplTest {
     void canDeleteTour() {
         //given
         Long tourIdToDelete = 12L;
+        TourEntity tourB = TourEntity
+                .builder()
+                .name("Radtour")
+                .description("leichte Tour")
+                .from("Leogang")
+                .time(1222)
+                .build();
+
+        given(tourRepository.findById(tourIdToDelete)).willReturn(Optional.ofNullable(tourB));
         //when
         underTest.deleteTour(tourIdToDelete);
         //then

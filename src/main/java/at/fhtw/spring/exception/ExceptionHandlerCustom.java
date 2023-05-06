@@ -1,5 +1,6 @@
 package at.fhtw.spring.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -12,6 +13,7 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @ControllerAdvice
 public class ExceptionHandlerCustom {
     @ExceptionHandler(value =  {ApiRequestException.class})
@@ -24,6 +26,7 @@ public class ExceptionHandlerCustom {
                 .timeStamp(ZonedDateTime.now(ZoneId.of("Z")))
                 .build();
         //return response entity
+        log.error(e.getMessage());
         return new ResponseEntity<>(apiException, HttpStatus.NOT_FOUND);
     }
 
@@ -40,7 +43,7 @@ public class ExceptionHandlerCustom {
                 .timeStamp(ZonedDateTime.now(ZoneId.of("Z")))
                 .build();
         //return response entity
-
+        errors.forEach(log::error);
         return new ResponseEntity<>(validationException, HttpStatus.BAD_REQUEST);
     }
 
@@ -54,6 +57,7 @@ public class ExceptionHandlerCustom {
                 .timeStamp(ZonedDateTime.now(ZoneId.of("Z")))
                 .build();
         //return response entity
+        log.error(e.getMessage());
         return new ResponseEntity<>(internalException, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

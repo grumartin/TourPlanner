@@ -1,15 +1,12 @@
 package at.fhtw.spring.controllers;
 
-import at.fhtw.spring.persistence.entities.TourEntity;
 import at.fhtw.spring.persistence.entities.TourLogEntity;
 import at.fhtw.spring.services.TourLogService;
-import at.fhtw.spring.services.TourService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -54,32 +51,29 @@ class TourLogControllerTest {
     @Test
     void TourLogControllerSaveTourLog() throws Exception{
         //given
-        when(tourLogService.saveTourLog(tourLog)).thenReturn(tourLog);
+        when(tourLogService.saveTourLog(tourLog, 12L)).thenReturn(tourLog);
         //when
-        ResultActions response = mockMvc.perform(post("/tourlog")
+        ResultActions response = mockMvc.perform(post("/tour/12/tourlog")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(tourLog)));
 
         //then
         response.andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.comment", CoreMatchers.is(tourLog.getComment())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.difficulty", CoreMatchers.is(tourLog.getDifficulty())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.tour", CoreMatchers.is(tourLog.getTour())));
-
+                .andExpect(MockMvcResultMatchers.jsonPath("$.difficulty", CoreMatchers.is(tourLog.getDifficulty())));
     }
 
     @Test
     void TourLogControllerFetchTourLog() throws Exception{
         //given
-        when(tourLogService.fetchTourLogs()).thenReturn(List.of(tourLog));
+        when(tourLogService.fetchTourLogs(12L)).thenReturn(List.of(tourLog));
         //when
-        ResultActions response = mockMvc.perform(get("/tourlogs"));
+        ResultActions response = mockMvc.perform(get("/tourlogs/12"));
 
         //then
         response.andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].comment", CoreMatchers.is(tourLog.getComment())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].difficulty", CoreMatchers.is(tourLog.getDifficulty())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].tour", CoreMatchers.is(tourLog.getTour())));
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].difficulty", CoreMatchers.is(tourLog.getDifficulty())));
     }
 
     @Test
@@ -95,8 +89,7 @@ class TourLogControllerTest {
         //then
         response.andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.comment", CoreMatchers.is(tourLog.getComment())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.difficulty", CoreMatchers.is(tourLog.getDifficulty())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.tour", CoreMatchers.is(tourLog.getTour())));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.difficulty", CoreMatchers.is(tourLog.getDifficulty())));
     }
 
     @Test

@@ -10,7 +10,7 @@ public interface TourLogService {
     //Create
     TourLogEntity saveTourLog(TourLogEntity tourLogEntity, Long tourId);
     //Read
-    List<TourLogEntity> fetchTourLogs();
+    List<TourLogEntity> fetchTourLogs(Long tourId);
     //Update
     TourLogEntity updateTourLog(TourLogEntity tourLogEntity, Long tourLogId);
     //Update

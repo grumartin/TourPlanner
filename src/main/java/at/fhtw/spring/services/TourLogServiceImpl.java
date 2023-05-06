@@ -19,8 +19,9 @@ public class TourLogServiceImpl implements TourLogService {
     @Autowired
     private TourRepository tourRepository;
 
-    public TourLogServiceImpl(TourLogRepository tourLogRepository){
+    public TourLogServiceImpl(TourLogRepository tourLogRepository, TourRepository tourRepository){
         this.tourLogRepository = tourLogRepository;
+        this.tourRepository = tourRepository;
     }
     @Override
     public TourLogEntity saveTourLog(TourLogEntity tourLogEntity, Long tourId) {
@@ -31,8 +32,11 @@ public class TourLogServiceImpl implements TourLogService {
     }
 
     @Override
-    public List<TourLogEntity> fetchTourLogs() {
-        return (List<TourLogEntity>) tourLogRepository.findAll();
+    public List<TourLogEntity> fetchTourLogs(Long tourId) {
+        TourEntity tourEntity = tourRepository.findById(tourId)
+                .orElseThrow(() -> new ApiRequestException("Tour with given ID does not exist."));
+
+        return (List<TourLogEntity>) tourLogRepository.findAllByTour(tourEntity);
     }
 
     @Override

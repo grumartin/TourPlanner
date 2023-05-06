@@ -28,10 +28,10 @@ public class TourLogController {
     }
 
     // Read operation
-    @GetMapping("/tourlogs")
-    public List<TourLogEntity> fetchTourLog()
+    @GetMapping("/tourlogs/{id}")
+    public List<TourLogEntity> fetchTourLog(@PathVariable("id") Long tourId)
     {
-        return tourLogService.fetchTourLogs();
+        return tourLogService.fetchTourLogs(tourId);
     }
 
     // Update operation
