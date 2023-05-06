@@ -15,7 +15,6 @@ import java.sql.Timestamp;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
@@ -24,12 +23,14 @@ class TourLogServiceImplTest {
     @Mock
     private TourLogRepository tourLogRepository;
     @Mock
+    private TourRepository tourRepository;
+    @Mock
     private TourEntity tourEntity;
     private TourLogService underTest;
 
     @BeforeEach
     void setUp() {
-        underTest = new TourLogServiceImpl(tourLogRepository);
+        underTest = new TourLogServiceImpl(tourLogRepository, tourRepository);
     }
 
     @Test
@@ -41,8 +42,18 @@ class TourLogServiceImplTest {
                 .creationTime(new Timestamp(System.currentTimeMillis()))
                 .tour(tourEntity)
                 .build();
+
+        TourEntity tour = TourEntity
+                .builder()
+                .id(12L)
+                .name("Bergtour")
+                .description("schwere Tour")
+                .time(2342)
+                .build();
+
+        given(tourRepository.findById(tour.getId())).willReturn(Optional.of(tour));
         //when
-        underTest.saveTourLog(tourLog);
+        underTest.saveTourLog(tourLog, 12L);
         //then
         ArgumentCaptor<TourLogEntity> tourLogEntityArgumentCaptor = ArgumentCaptor.forClass(TourLogEntity.class);
         verify(tourLogRepository).save(tourLogEntityArgumentCaptor.capture());
@@ -53,10 +64,20 @@ class TourLogServiceImplTest {
 
     @Test
     void canFetchTourLogs() {
+        //Given
+        TourEntity tour = TourEntity
+                .builder()
+                .id(12L)
+                .name("Bergtour")
+                .description("schwere Tour")
+                .time(2342)
+                .build();
+
+        given(tourRepository.findById(tour.getId())).willReturn(Optional.of(tour));
         //when
-        underTest.fetchTourLogs();
+        underTest.fetchTourLogs(tour.getId());
         //then
-        verify(tourLogRepository).findAll();
+        verify(tourLogRepository).findAllByTour(tour);
     }
 
     @Test
@@ -96,6 +117,14 @@ class TourLogServiceImplTest {
     void canDeleteTourLog() {
         //given
         Long tourLogIdToDelete = 12L;
+        TourLogEntity tourLogA = TourLogEntity
+                .builder()
+                .comment("first log")
+                .creationTime(new Timestamp(System.currentTimeMillis()))
+                .tour(tourEntity)
+                .build();
+
+        given(tourLogRepository.findById(tourLogIdToDelete)).willReturn(Optional.ofNullable(tourLogA));
         //when
         underTest.deleteTourLog(tourLogIdToDelete);
         //then

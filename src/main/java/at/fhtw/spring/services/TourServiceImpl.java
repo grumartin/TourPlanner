@@ -4,6 +4,7 @@ import at.fhtw.spring.exception.ApiRequestException;
 import at.fhtw.spring.persistence.entities.TourEntity;
 import at.fhtw.spring.persistence.entities.TourLogEntity;
 import at.fhtw.spring.persistence.repositories.TourRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Objects;
 
+@Slf4j
 @Service
 public class TourServiceImpl implements TourService {
     @Autowired
