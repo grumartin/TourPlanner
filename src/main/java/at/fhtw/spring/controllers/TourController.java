@@ -24,6 +24,12 @@ public class TourController {
         return tourService.saveTour(tour);
     }
 
+    @PostMapping("/tour/import")
+    public void saveTour(@Valid @RequestBody List<TourEntity> tours)
+    {
+        tourService.saveTours(tours);
+    }
+
     // Read operation
     @GetMapping("/tours")
     public List<TourEntity> fetchTours()
