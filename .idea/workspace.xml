@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="MapQuest Implementation">
+    <list default="true" id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="Tourlog fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openapi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/controllers/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/controllers/TourController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/controllers/TourLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/controllers/TourLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/exception/ExceptionHandlerCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/exception/ExceptionHandlerCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/repositories/TourLogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/repositories/TourLogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/MapServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/MapServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourLogService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourLogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/fhtw/spring/controllers/TourLogControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/spring/controllers/TourLogControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/fhtw/spring/services/TourLogServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/spring/services/TourLogServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/at/fhtw/spring/services/TourServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/at/fhtw/spring/services/TourServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +69,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/martin/Workspaces/TourPlanner&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/martin/Downloads/RadialMenu&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;2a2d595e6ed9a0b24f027f2b63b134d6&quot;
   },
@@ -95,7 +89,7 @@
       <recent name="at.fhtw.spring.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TourLogControllerTest.TourLogControllerUpdateTourLog">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="TourControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
@@ -208,6 +202,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="" />
@@ -238,7 +235,14 @@
       <workItem from="1683135882012" duration="660000" />
       <workItem from="1683210181645" duration="183000" />
       <workItem from="1683210870762" duration="104000" />
-      <workItem from="1683376123495" duration="4436000" />
+      <workItem from="1683376123495" duration="4689000" />
+      <workItem from="1683382691559" duration="1847000" />
+      <workItem from="1683388171825" duration="29000" />
+      <workItem from="1683540182961" duration="349000" />
+      <workItem from="1683540653873" duration="1809000" />
+      <workItem from="1683553400164" duration="251000" />
+      <workItem from="1683802608240" duration="4382000" />
+      <workItem from="1683830400482" duration="2929000" />
     </task>
     <task id="LOCAL-00001" summary="Entity Creation">
       <created>1680011857377</created>
@@ -282,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682506581870</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tourlog fix">
+      <created>1683380657778</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683380657778</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +316,8 @@
     <MESSAGE value="Updated openapi.yaml File" />
     <MESSAGE value="Updated README File" />
     <MESSAGE value="MapQuest Implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="MapQuest Implementation" />
+    <MESSAGE value="Tourlog fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tourlog fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TourPlanner$TourLogControllerTest.ic" NAME="TourLogControllerTest Coverage Results" MODIFIED="1681572707073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

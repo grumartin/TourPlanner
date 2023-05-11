@@ -73,4 +73,13 @@ public class TourLogServiceImpl implements TourLogService {
                 .orElseThrow(() -> new ApiRequestException("The provided tourlog was not found."));
         tourLogRepository.deleteById(tourLogId);
     }
+
+    @Override
+    public void saveTourLogs(List<TourLogEntity> tourLogs, Long tourId) {
+        TourEntity tourEntity = tourRepository.findById(tourId)
+                .orElseThrow(() -> new ApiRequestException("Tour with given ID does not exist."));
+
+        tourLogs.forEach(log -> log.setTour(tourEntity));
+        tourLogRepository.saveAll(tourLogs);
+    }
 }

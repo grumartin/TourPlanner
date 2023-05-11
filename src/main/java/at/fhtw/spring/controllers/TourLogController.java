@@ -27,6 +27,13 @@ public class TourLogController {
         return tourLogService.saveTourLog(tourLog, tourId);
     }
 
+    @PostMapping("/tour/{id}/tourlog/import")
+    public void saveTourLogFromJson(@Valid @RequestBody List<TourLogEntity> tourLogs,
+                                     @PathVariable("id") Long tourId)
+    {
+        tourLogService.saveTourLogs(tourLogs, tourId);
+    }
+
     // Read operation
     @GetMapping("/tourlogs/{id}")
     public List<TourLogEntity> fetchTourLog(@PathVariable("id") Long tourId)

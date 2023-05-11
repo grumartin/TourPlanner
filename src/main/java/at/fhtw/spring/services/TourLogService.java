@@ -15,4 +15,6 @@ public interface TourLogService {
     TourLogEntity updateTourLog(TourLogEntity tourLogEntity, Long tourLogId);
     //Update
     void deleteTourLog(Long tourLogId);
+
+    void saveTourLogs(List<TourLogEntity> tourLogs, Long tourId);
 }

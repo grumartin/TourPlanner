@@ -78,4 +78,9 @@ public class TourServiceImpl implements TourService {
                 .orElseThrow(() -> new ApiRequestException("The provided tour was not found."));
         tourRepository.deleteById(tourId);
     }
+
+    @Override
+    public void saveTours(List<TourEntity> tours) {
+        tourRepository.saveAll(tours);
+    }
 }
