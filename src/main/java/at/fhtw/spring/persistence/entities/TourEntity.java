@@ -1,11 +1,14 @@
 package at.fhtw.spring.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -30,6 +33,7 @@ public class TourEntity {
     private String type;
     private Float distance;
     private Integer time;   //seconds
-    @Column(name = "img_path")
-    private String imgPath;
+    @OneToMany(mappedBy = "tour", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<TourLogEntity> logs;
 }

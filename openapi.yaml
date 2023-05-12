@@ -41,6 +41,23 @@ paths:
           description: Tour successfully retrieved
         '204':
           description: No tours found
+  /tour/import:
+    post:
+      tags:
+        - tour
+      summary: Create new tours
+      description: Create multiple tours at once
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/schemas/Tour'
+        required: true
+      responses:
+        '201':
+          description: Tours successfully created
+        '409':
+          description: Tour with same name already created
   /tours:
     get:
       tags:
@@ -116,6 +133,31 @@ paths:
       responses:
         '201':
           description: Tour log successfully created
+        '404':
+          description: The provided tourid was not found.
+  /tour/{id}/tourlog/import:
+    post:
+      tags:
+        - tourlogs
+      summary: Create new tour logs mapped to a tour
+      description: Create multiple tour logs with all information
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 12
+          description: The id from a tour to which the tourlogs should belong.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#components/schemas/Tourlog'
+        required: true
+      responses:
+        '201':
+          description: Tour logs successfully created
         '404':
           description: The provided tourid was not found.
   /tourlogs/{id}:
