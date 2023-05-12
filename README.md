@@ -36,32 +36,31 @@ Run with Maven
 
 All the functional Endpoints are described in the openapi.yaml File.
 
-## 🧪 Test
-
-
 
 ## 🧾 Protocol
 
 ### App Architecture
 
+![Architecture](assets/architecture.png)
 
 ### Unit Test Design
 
+The Unit Test were designed in a bottom up approach. Which means tests are designed for each layer except the Repositories.
+Since the repositories should have already been tested by spring. Thus, tests were implemented for the Controllers and
+Services.
 
-### Unique Feature
+The Services are the first layer which gets tested. Therefore, we mocked the repository with mockito. The tests are
+structured in a given, when, then manner. Given states the initial data used for the test. When covers the part were
+something gets called. Then checks if the correct method got called and if the arguments are right.
 
-
-### Bonus Feature
-
+The Controller tests build upon the same approach. The only difference here is, that we are using the WebMvcTest library from
+spring. This library can perform Http Requests, which are used to test our controllers. This way we can test all of our endpoints
+and check the different response contents.
 
 ### Time Tracking
 
-
+![Tracked Time](assets/time_tracked.png)
 
 ### Link to git
 
 https://github.com/grumartin/TourPlanner
-
-### Encountered Problems
-
-****

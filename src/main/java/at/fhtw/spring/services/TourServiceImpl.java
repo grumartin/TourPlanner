@@ -2,7 +2,6 @@ package at.fhtw.spring.services;
 
 import at.fhtw.spring.exception.ApiRequestException;
 import at.fhtw.spring.persistence.entities.TourEntity;
-import at.fhtw.spring.persistence.entities.TourLogEntity;
 import at.fhtw.spring.persistence.repositories.TourRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,10 +62,6 @@ public class TourServiceImpl implements TourService {
 
         if (Objects.nonNull(tourEntity.getTime())) {
             tourNew.setTime(tourEntity.getTime());
-        }
-
-        if (Objects.nonNull(tourEntity.getImgPath())) {
-            tourNew.setImgPath(tourEntity.getImgPath());
         }
 
         return tourRepository.save(tourNew);
