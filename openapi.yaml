@@ -13,6 +13,8 @@ tags:
     description: Tour Log creation and modification(CRUD)
   - name: map
     description: Maquest API
+  - name: search
+    description: Full Text Search
 paths:
   /tour:
     post:
@@ -265,6 +267,21 @@ paths:
       responses:
         '200':
           description: Distance[miles] and Time[sec]
+  /full_text_search/{value}:
+    get:
+      tags:
+        - search
+      summary: Full text search
+      description: Full text search on all String values in DB
+      parameters:
+        - in: query
+          name: value
+          schema:
+            type: string
+          description: The value after which should be searched
+      responses:
+        '200':
+          description: List of tours
 
 
 components:

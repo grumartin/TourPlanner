@@ -32,6 +32,7 @@ public class TourEntity {
     @Column(name = "transport_type")
     private String type;
     private Float distance;
+    @Column(name = "t_time")
     private Integer time;   //seconds
     @OneToMany(mappedBy = "tour", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore

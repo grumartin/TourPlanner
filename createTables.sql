@@ -24,3 +24,41 @@ CREATE TABLE tour_log
     tour_id INTEGER,
     CONSTRAINT fk_tour_id FOREIGN KEY (tour_id) REFERENCES tour (t_id)
 );
+
+
+CREATE OR REPLACE FUNCTION full_text_search(input_string VARCHAR)
+RETURNS TABLE (
+    t_id INT,
+    name VARCHAR(50),
+    t_description VARCHAR(50),
+    t_start VARCHAR(75),
+    t_end VARCHAR(75),
+    transport_type VARCHAR(75),
+    distance FLOAT,
+    t_time INT
+)
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT
+        t.t_id,
+        t.name,
+        t.t_description,
+        t.t_start,
+        t.t_end,
+        t.transport_type,
+        t.distance,
+        t.t_time
+    FROM
+        tour t
+    JOIN
+        tour_log tl ON t.t_id = tl.tour_id
+    WHERE
+        t.name ILIKE '%' || input_string || '%'
+        OR t.t_description ILIKE '%' || input_string || '%'
+        OR t.t_start ILIKE '%' || input_string || '%'
+        OR t.t_end ILIKE '%' || input_string || '%'
+        OR t.transport_type ILIKE '%' || input_string || '%'
+        OR tl.comment ILIKE '%' || input_string || '%';
+END;
+$$ LANGUAGE plpgsql;
