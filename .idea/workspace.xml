@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="Import Json Endpoints">
+    <list default="true" id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="Bug Fix and ReadMe Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/createTables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openapi.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourLogEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourLogEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/services/TourServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +240,11 @@
       <workItem from="1683553400164" duration="251000" />
       <workItem from="1683802608240" duration="4382000" />
       <workItem from="1683830400482" duration="3085000" />
-      <workItem from="1683906201880" duration="4723000" />
+      <workItem from="1683906201880" duration="4802000" />
+      <workItem from="1683999311625" duration="19000" />
+      <workItem from="1684162268051" duration="213000" />
+      <workItem from="1684405082270" duration="4824000" />
+      <workItem from="1684416171986" duration="338000" />
     </task>
     <task id="LOCAL-00001" summary="Entity Creation">
       <created>1680011857377</created>
@@ -300,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683836033262</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Bug Fix and ReadMe Update">
+      <created>1683911025886</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683911025886</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +334,8 @@
     <MESSAGE value="MapQuest Implementation" />
     <MESSAGE value="Tourlog fix" />
     <MESSAGE value="Import Json Endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="Import Json Endpoints" />
+    <MESSAGE value="Bug Fix and ReadMe Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix and ReadMe Update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TourPlanner$TourLogControllerTest.ic" NAME="TourLogControllerTest Coverage Results" MODIFIED="1681572707073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
