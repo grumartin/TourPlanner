@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="Bug Fix and ReadMe Update">
+    <list default="true" id="4cd5148d-de87-4d1f-9366-c5689b814d8f" name="Changes" comment="Full Text Search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/createTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/createTables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openapi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/spring/persistence/entities/TourEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +242,8 @@
       <workItem from="1683999311625" duration="19000" />
       <workItem from="1684162268051" duration="213000" />
       <workItem from="1684405082270" duration="4824000" />
-      <workItem from="1684416171986" duration="338000" />
+      <workItem from="1684416171986" duration="1354000" />
+      <workItem from="1684838524544" duration="692000" />
     </task>
     <task id="LOCAL-00001" summary="Entity Creation">
       <created>1680011857377</created>
@@ -309,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683911025886</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Full Text Search">
+      <created>1684416561720</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684416561720</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +341,8 @@
     <MESSAGE value="Tourlog fix" />
     <MESSAGE value="Import Json Endpoints" />
     <MESSAGE value="Bug Fix and ReadMe Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix and ReadMe Update" />
+    <MESSAGE value="Full Text Search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full Text Search" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TourPlanner$TourLogControllerTest.ic" NAME="TourLogControllerTest Coverage Results" MODIFIED="1681572707073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
