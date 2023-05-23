@@ -40,7 +40,7 @@ RETURNS TABLE (
 AS $$
 BEGIN
     RETURN QUERY
-    SELECT
+    SELECT DISTINCT
         t.t_id,
         t.name,
         t.t_description,
