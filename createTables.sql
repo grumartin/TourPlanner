@@ -8,7 +8,7 @@ CREATE TABLE tour
     t_end VARCHAR(75) NULL,
     transport_type VARCHAR(75) NULL,
     distance FLOAT NULL,
-    time TIME NULL,
+    time INTEGER NULL,
     img_path VARCHAR(100) NULL
 );
 
@@ -19,7 +19,7 @@ CREATE TABLE tour_log
     creation_time TIMESTAMP NOT NULL,
     comment VARCHAR(100) NULL,
     difficulty INTEGER NULL,
-    total_time TIME NULL,
+    total_time INTEGER NULL,
     rating INTEGER NULL,
     tour_id INTEGER,
     CONSTRAINT fk_tour_id FOREIGN KEY (tour_id) REFERENCES tour (t_id)
