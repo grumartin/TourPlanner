@@ -43,6 +43,10 @@ All the functional Endpoints are described in the openapi.yaml File.
 
 ![Architecture](assets/architecture.png)
 
+### Class Diagram
+
+![Class Diagram](assets/class_diagram.png)
+
 ### Unit Test Design
 
 The Unit Test were designed in a bottom up approach. Which means tests are designed for each layer except the Repositories.
