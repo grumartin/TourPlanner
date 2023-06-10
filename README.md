@@ -61,6 +61,11 @@ and check the different response contents.
 
 ![Tracked Time](assets/time_tracked.png)
 
+### Lessons Learned
+
+1. Planning is crucial: Take the time to thoroughly plan and define the scope of your project before diving into development. Clearly outline the features and functionalities you want to include in the application. This will help you stay focused and organized throughout the development process.
+2. Understanding the requirements: Spend sufficient time understanding and documenting the requirements of your project. A clear understanding of the requirements will prevent misunderstandings and rework in later stages of development.
+
 ### Link to git
 
 https://github.com/grumartin/TourPlanner
