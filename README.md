@@ -43,6 +43,27 @@ All the functional Endpoints are described in the openapi.yaml File.
 
 ![Architecture](assets/architecture.png)
 
+### Use Case Diagram
+![Use Cases](assets/Use_Case_Diagram_TourPlanner.png)
+
+### Class diagram
+![ClassDiagram](assets/class_diagram.png)
+### Wireframes
+
+![Wireframe](assets/wireframe_basic_view.jpg)
+
+![Wireframe](assets/wireframe_add_view.jpg)
+
+![Wireframe](assets/wireframe_route_view.jpg)
+
+###	Communication between FXML files
+For the communication the Observer Pattern was used, for example when a Tour is selected in the Observable List of Tours,
+a FXML-Loader gets notified to load the FXML files of the Tour Information and Tour-Logs.
+
+The same pattern is used for the calculation of the Child-Friendliness and the popularity of a trip. Every time a new Tour-Log gets added
+or a Log is deleted, the Observable List of Tour-Logs calls a function to calculate the values notifies the TourInformationController
+to update the values.
+
 ### Unit Test Design
 
 The Unit Test were designed in a bottom up approach. Which means tests are designed for each layer except the Repositories.
@@ -57,10 +78,16 @@ The Controller tests build upon the same approach. The only difference here is, 
 spring. This library can perform Http Requests, which are used to test our controllers. This way we can test all of our endpoints
 and check the different response contents.
 
+### Lessons learned
+The most important lessons learned are, that we now understand how a userinterface should be structured and how it is done in JavaFX.
+The usage of the Model View ViewModel pattern was also new to us and now we are capable to take the benefits out of it.
+Also we gained some experience with patterns, like using the Observer Pattern for certain UI components.
 ### Time Tracking
 
 ![Tracked Time](assets/time_tracked.png)
 
 ### Link to git
-
+#### Server:
 https://github.com/grumartin/TourPlanner
+#### User Interface:
+https://github.com/Warteczek/TourPlannerUI.git
